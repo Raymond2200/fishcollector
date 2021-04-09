@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Edit a Fish</h1>
+
+<form method="POST" action="/fish/{{fish.id}}/edited">
+    {% csrf_token %}
+    name: <input name="name" value="{{fish.name}}"/>
+    specie: <input name="specie" value="{{fish.specie}}"/>
+    description: <input name="description" value="{{fish.description}}"/>
+    age: <input name="age" type="number" value="{{fish.age}}"/>
+    <button>Edit Fish</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Add a Fish</h1>
+
+<form method="POST" action="/fish/create/">
+    {% csrf_token %}
+    name: <input name="name"/>
+    species: <input name="species"/>
+    description: <input name="description"/>
+    age: <input name="age" type="number"/>
+    <button> Add fish</button>
+</form>
+
+{% endblock %}
